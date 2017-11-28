@@ -1,7 +1,7 @@
 angular.module("starter")
 .service("PokedexService", function($http){
     var pokedexService = {};
-    
+
     pokedexService.getPokemonNames = function(callback) {
         var answer = [];
         for (i=0; i<)
@@ -10,8 +10,8 @@ angular.module("starter")
 })
 
 .controller("ListagemController", ["PokemonService", "$scope", function($scope){
-    
-    $scope.listaPokemons = 
+
+    $scope.listaPokemons =
 
     $scope.toggleGroup = function(grupo){
         if ($scope.isGroupShown(grupo))
@@ -21,6 +21,6 @@ angular.module("starter")
     };
 
     $scope.isGroupShown = function(grupo){
-        return $scope.shownGroup === grupo;
+        return $scope.shownGroup == = grupo;
     }
 }])

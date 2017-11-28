@@ -1,4 +1,4 @@
-angular.module('starter').controller('Lista PokemonsController', function($scope, PokedexService){
+angular.module('starter').controller('ListaPokemonsController', function($scope, PokedexService){
   PokedexService.obterPokemons().then(function(dados){
     $scope.listaPokemons = dados.pokemon;
     $scope.listaPokemons.forEach(function(element){

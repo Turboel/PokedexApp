@@ -1,8 +1,11 @@
 <ion-view>
-    <ion-nav-title>{{numPokemon}}</ion-nav-title>
+    <ion-nav-title>{{poke.forms[0].name | capitalizeFirstLetter}}</ion-nav-title>
     <ion-content>
-        <h4>Number {{numPokemon}} </h4>
-        <!--Types: {{poke.type1}} {{poke.type2}}    Não encontrei no Json da API (Victor)-->
+        <h4>Number: {{numPokemon}} </h4>
+        <h4>Types: </h4>
+          <p ng-repeat="types in poke.types">
+            {{types.type.name}}
+          </p>
         <h4>Abilities:</h4>
           <p ng-repeat="hab in poke.abilities">
             {{hab.ability.name}}
@@ -10,7 +13,7 @@
           </p>
         <h4>Stats:</h4>
             <div ng-repeat="status in poke.stats">
-                <p>{{status.stat.name}}, {{status.base_stat}}</p>
+                <p>{{status.stat.name}} - {{status.base_stat}}</p>
             </div>
         </table>
     </ion-content>

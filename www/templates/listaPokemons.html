@@ -1,10 +1,22 @@
 <ion-view>
   <ion-nav-title>Lista de Pokémons</ion-nav-title>
   <ion-content>
-    <ion-list>
-      <ion-item ng-repeat="pokemon in listaPokemons">
-        <a href="#/pokemon/{{pokemon.id}}">{{pokemon.id}} - {{pokemon.name | capitalizeFirstLetter}}</a>
-      </ion-item>
+      <ion-list>
+          <div ng-repeat="pai in listaPokemons">
+              <ion-item class="item-stable"
+                          ng-click="toggleGroup(pai)"
+                          ng-class="{active: isGroupShown(pai)}">
+                  <i class="icon" ng-class="isGroupShown(pai) ? 'ion-minus' : 'ion-plus'"></i>
+                  &nbsp;
+                  {{pai.prim}}
+              </ion-item>
+              <ion-item class="item-accordion"
+                          ng-repeat="filho in pai.subs"
+                          ng-show="isGroupShown(pai)">
+                  <a href="#/tabela/{{filho.id}}">{{filho.name}}</a>
+              </ion-item>
+          </div>          
+      </ion-list>
     </ion-list>
   </ion-content>
 </ion-view>

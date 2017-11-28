@@ -10,7 +10,6 @@ angular.module('starter').controller('ListaPokemonsController', function($scope,
       else return 0;
     });
   })
-
 });
 
   // Xxxx...

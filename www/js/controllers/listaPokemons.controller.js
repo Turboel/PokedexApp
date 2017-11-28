@@ -47,7 +47,7 @@ angular.module('starter').controller('ListaPokemonsController', function($scope,
       else if (element.id < 387)  sortedList[2].subs.push(element);
       else if (element.id < 494)  sortedList[3].subs.push(element);
       else if (element.id < 650)  sortedList[4].subs.push(element);
-      else if (element.id < 10000)sortedList[1].subs.push(element);
+      else if (element.id < 10000)sortedList[5].subs.push(element);
       else                        sortedList[6].subs.push(element);
     });
     $scope.listaPokemons = sortedList;

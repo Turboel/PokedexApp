@@ -1,8 +1,16 @@
 <ion-view>
-  <ion-nav-title>Lista de Pokémons</ion-nav-title>
+  <!--<ion-nav-title>Lista de Pokémons</ion-nav-title>-->
   <ion-content>
+
+      <div class="list list-inset">
+          <label class="item item-input">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="text" placeholder="Digite um Pokémon aqui" ng-model="searchInput">
+          </label>
+        </div>
+
     <ion-list>
-      <ion-item ng-repeat="pokemon in listaPokemons">
+      <ion-item ng-repeat="pokemon in listaPokemons | filter: searchInput">
         <a href="#/pokemon/{{pokemon.id}}">{{pokemon.id}} - {{pokemon.name | capitalizeFirstLetter}}</a>
       </ion-item>
     </ion-list>

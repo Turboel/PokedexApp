@@ -10,7 +10,7 @@
         </div>
 
     <ion-list>
-      <div ng-repeat="pai in listaPokemons">
+      <div ng-repeat="pai in listaPokemons | filter: searchInput">
           <ion-item class="item-stable"
                       ng-click="toggleGroup(pai)"
                       ng-class="{active: isGroupShown(pai)}">
@@ -19,9 +19,9 @@
             {{pai.prim}}
           </ion-item>
           <ion-item class="item-accordion"
-                      ng-repeat="filho in pai.subs"
+                      ng-repeat="filho in pai.subs | filter: searchInput"
                       ng-show="isGroupShown(pai)">
-            <a href="#/pokemon/{{filho.id}}">{{filho.id}} - {{filho.name}}</a>
+            <a href="#/pokemon/{{filho.id}}">{{filho.id}} - {{filho.name | capitalizeFirstLetter}}</a>
           </ion-item>
         </div>          
       </ion-list>

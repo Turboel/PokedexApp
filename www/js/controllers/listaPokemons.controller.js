@@ -64,6 +64,8 @@ $scope.isGroupShown = function(grupo){
     return $scope.shownGroup === grupo;
 }
 
+$scope.searchInput = "";
+
 });
 
   // Xxxx...

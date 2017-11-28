@@ -3,9 +3,9 @@
     <ion-content>
         <h4>Number: {{numPokemon}} </h4>
         <h4>Types: </h4>
-          <p ng-repeat="types in poke.types">
-            {{types.type.name}}
-          </p>
+          <div ng-repeat="types in poke.types">
+            <img src="img/types/{{types.type.name}}.png" style="height: 30px; width: 100px">
+          </div>
         <h4>Abilities:</h4>
           <p ng-repeat="hab in poke.abilities">
             {{hab.ability.name}}

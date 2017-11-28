@@ -21,6 +21,6 @@ angular.module("starter")
     };
 
     $scope.isGroupShown = function(grupo){
-        return $scope.shownGroup == = grupo;
+        return $scope.shownGroup === grupo;
     }
 }])

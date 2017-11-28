@@ -1,9 +1,9 @@
 <ion-view>
-  <ion-nav-title>Lista de Pokemons</ion-nav-title>
+  <ion-nav-title>Lista de Pokémons</ion-nav-title>
   <ion-content>
     <ion-list>
       <ion-item ng-repeat="pokemon in listaPokemons">
-        <a href="#/pokemon/{{pokemon.id}}">{{pokemon.id}} - {{pokemon.name}}</a>
+        <a href="#/pokemon/{{pokemon.id}}">{{pokemon.id}} - {{pokemon.name | capitalizeFirstLetter}}</a>
       </ion-item>
     </ion-list>
   </ion-content>

@@ -10,4 +10,12 @@ angular.module('starter').controller('ListaPokemonsController', function($scope,
       else return 0;
     });
   })
+
 });
+
+  // Xxxx...
+  app.filter('capitalizeFirstLetter', function(){
+    return function(pokemonName){
+      return pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
+    }
+  });

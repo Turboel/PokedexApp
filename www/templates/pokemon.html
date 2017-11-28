@@ -1,27 +1,17 @@
 <ion-view>
     <ion-nav-title>{{numPokemon}}</ion-nav-title>
     <ion-content>
-        <h4>Number {{poke.num}} </h4>
-        Types: {{poke.type1}} {{poke.type2}}
-        <table>
-            <thead>
-                <th>Abilities:</th>
-            </thead>
-            <tr>
-                <td ng-repeat="hab in poke.habilities">
-                    {{hab.ability.name}}
-                    <i class="icon" ng-show="hab.is_hidden" ng-class="ion-star"></i>
-                </td>
-            </tr>
+        <h4>Number {{numPokemon}} </h4>
+        <!--Types: {{poke.type1}} {{poke.type2}}    Não encontrei no Json da API (Victor)-->
+        <h4>Abilities:</h4>
+          <p ng-repeat="hab in poke.abilities">
+            {{hab.ability.name}}
+            <i class="icon" ng-show="hab.is_hidden" ng-class="ion-star"></i>
+          </p>
+        <h4>Stats:</h4>
+            <div ng-repeat="status in poke.stats">
+                <p>{{status.stat.name}}, {{status.base_stat}}</p>
+            </div>
         </table>
-        <table>
-            <thead>
-                <th>Stats</th>
-            </thead>
-            <tr ng-repeat="status in stats">
-                <td>{{status.stat.name}}</td>
-                <td>{{status.base_stat}}</td>
-            </tr>
-        </table> 
     </ion-content>
 </ion-view>

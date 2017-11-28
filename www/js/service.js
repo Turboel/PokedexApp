@@ -7,14 +7,9 @@ angular.module('starter').service('PokedexService', function($http){
         return response.data;
       });
     },
-    obterUmPokemon: function(num, callback){
-      $http.get("https://pokeapi.co/api/v1/pokemon/"+num+"/").then(function(response){
-        var answer = response.data;
-        callback(answer);
-      },
-      function(response){
-        var answer = null;
-        callback(answer);
+    obterUmPokemon: function(num){
+      return $http.get("https://pokeapi.co/api/v2/pokemon/"+ num).then(function(response){
+        return response.data;
       });
     }
   }

@@ -1,21 +1,21 @@
 <ion-view>
     <ion-nav-title>#{{numPokemon}} - {{poke.forms[0].name | capitalizeFirstLetter}}</ion-nav-title>
     <ion-content>
-      <img src="https://img.pokemondb.net/sprites/x-y/normal/{{poke.name}}.png">
-      <img src="https://img.pokemondb.net/sprites/x-y/shiny/{{poke.name}}.png">
+      <img src="https://img.pokemondb.net/sprites/x-y/normal/{{poke.name}}.png" style="height: 140px; width: 140px">
+      <img src="https://img.pokemondb.net/sprites/x-y/shiny/{{poke.name}}.png" style="height: 140px; width: 140px">
       <!--<h4>Number: {{numPokemon}} </h4>-->
       <h4>Types: </h4>
-        <div ng-repeat="types in poke.types">
-          <img src="img/types/{{types.type.name}}.png" style="height: 22px; width: 70px">
+        <div ng-repeat="types in poke.types | reverse">
+          <img src="img/types/{{types.type.name}}.png" style="height: 24px; width: 85px">
         </div>
       <h4>Abilities:</h4>
-        <p ng-repeat="hab in poke.abilities">
-          {{hab.ability.name | capitalizeFirstLetter}}
+        <p ng-repeat="hab in poke.abilities | reverse">
+          {{hab.ability.name | spaces}}
           <i class="icon" ng-show="hab.is_hidden" ng-class="ion-star"></i>
         </p>
       <h4>Stats:</h4>
           <div ng-repeat="status in poke.stats">
-              <p>{{status.stat.name | capitalizeFirstLetter}} - {{status.base_stat}}</p>
+              <p>{{status.stat.name | spaces}} - {{status.base_stat}}</p>
           </div>
       </table>
     </ion-content>

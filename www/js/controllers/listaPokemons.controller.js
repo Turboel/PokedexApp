@@ -68,7 +68,7 @@ $scope.searchInput = "";
 
 });
 
-  // Xxxx...
+  // Capitalize...
   app.filter('capitalizeFirstLetter', function(){
     return function(pokemonName){
       return pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
